@@ -29,38 +29,38 @@ namespace Exzolt.Negocio
         }
 
 
-        public List<LecturasxBitacora> lecturas(int idBitacora)
+        public List<LecturasxBitacora> lecturas(int idModelo)
         {
             List<LecturasxBitacora> listlecturas = new List<LecturasxBitacora>();
             DataTable dtLecturas;
-            dtLecturas=metodoDatos.Lecturas(idBitacora);
+            dtLecturas=metodoDatos.Lecturas(idModelo);
 
             foreach (DataRow row in dtLecturas.Rows)
             {
                 LecturasxBitacora parametros = new LecturasxBitacora();
 
-                parametros.DesEtapa = row["Etapa"].ToString();
                 parametros.DesModulo = row["Modulo"].ToString();
                 parametros.DesSensor = row["Sensor"].ToString();
                 parametros.valor = Convert.ToDouble(row["Lectura"].ToString());
-                parametros.acronimo = row["acronimo"].ToString();
+                parametros.acronimo = row["Unidad"].ToString();
 
                 listlecturas.Add(parametros);
             }            
             return listlecturas;
         }
 
-        public List<Bitacora> Bitacora(int idBitacora)
+        public List<Bitacora> Bitacora(int idModelo)
         {
             List<Bitacora> listlecturas = new List<Bitacora>();
             DataTable dtBitacora;
-            dtBitacora = metodoDatos.Bitacora(idBitacora);
+            dtBitacora = metodoDatos.Bitacora(idModelo);
 
             foreach (DataRow row in dtBitacora.Rows)
             {
                 Bitacora parametros = new Bitacora();
 
                 parametros.Proceso = row["Proceso"].ToString();
+                parametros.Etapa = row["Etapas"].ToString();
                 parametros.fechaInicio = row["fechaInicio"].ToString();
                 if(row["fechaFin"].ToString() != "") {
                     parametros.fechaFin = row["fechaFin"].ToString();
