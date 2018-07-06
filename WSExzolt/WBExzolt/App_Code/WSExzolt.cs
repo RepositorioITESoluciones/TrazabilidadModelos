@@ -15,14 +15,14 @@ public class WSExzolt : System.Web.Services.WebService
 
     #region Get
     [WebMethod]
-    public List<LecturasxBitacora> OptenerLecturas(int idBitacora)
+    public List<LecturasxBitacora> OptenerLecturas(int idModelo)
     {
-        return metodos.lecturas(idBitacora);
+        return metodos.lecturas(idModelo);
     }
     [WebMethod]
-    public List<Bitacora> OptenerBitacora(int idBitacora)
+    public List<Bitacora> OptenerBitacora(int idModelo)
     {
-        return metodos.Bitacora(idBitacora);
+        return metodos.Bitacora(idModelo);
     }
     #endregion
     #region Post

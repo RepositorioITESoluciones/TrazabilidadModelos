@@ -10,6 +10,7 @@ namespace Trazabilidad.Entidades
         public int idBitacora { get; set; }
         public int idEtapaxProceso { get; set; }
         public string Proceso { get; set; }
+        public string Etapa { get; set; }
         public string fechaInicio { get; set; }
         public string fechaFin { get; set; }
 

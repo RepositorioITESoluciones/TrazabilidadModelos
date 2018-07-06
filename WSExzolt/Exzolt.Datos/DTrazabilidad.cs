@@ -47,7 +47,7 @@ namespace Exzolt.Datos
             }
         }
 
-        public DataTable Lecturas(int idBitacora)
+        public DataTable Lecturas(int idModelo)
         {
             DataTable dtLecturas = new DataTable();
             SqlConnection connection = null;
@@ -55,19 +55,22 @@ namespace Exzolt.Datos
             try{
                 using (connection = Conexion.ObtieneConexion("ConexionBD")){
                     connection.Open();
-                    consulta = Ejecuta.ConsultaConRetorno(connection, "SELECT EP.descripcion Etapa, M.descripcion Modulo, S.descripcion Sensor,"
-                                                                    + " valor Lectura, u.acronimo"
-                                                                    + " FROM ModelosTrazabilidad.LecturasxBitacora LB,"
-                                                                    + " ModelosTrazabilidad.Bitacora B, ModelosTrazabilidad.Sensores S,"
-                                                                    + " ModelosTrazabilidad.Modulos M, ModelosTrazabilidad.Unidades U,"
-                                                                    + " ModelosTrazabilidad.EtapasxProceso EP"
-                                                                    + " WHERE B.idBitacora = LB.idBitacora"
-                                                                    + " AND S.idSensor = LB.idSensor"
-                                                                    + " AND M.idModulo = LB.idModulo"
-                                                                    + " AND U.idUnidad = S.idUnidad"
-                                                                    + " AND EP.idEtapaxProceso = B.idEtapaxProceso"
-                                                                    + " AND b.idBitacora = "+ idBitacora
-                                                                    + " AND B.fechaFin IS NULL; ");
+                    consulta = Ejecuta.ConsultaConRetorno(connection, "SELECT distinct  M.descripcion Modulo, S.descripcion Sensor,"
+                                                                        + " valor Lectura, u.acronimo Unidad"
+                                                                        + " FROM ModelosTrazabilidad.LecturasxBitacora LB,"
+                                                                        + " ModelosTrazabilidad.Bitacora B, ModelosTrazabilidad.Sensores S,"
+                                                                        + " ModelosTrazabilidad.Modulos M, ModelosTrazabilidad.Unidades U,"
+                                                                        + " ModelosTrazabilidad.Modelos MO,"
+                                                                        + " ModelosTrazabilidad.EtapasxProceso EP, ModelosTrazabilidad.ProcesosxModelo PM"
+                                                                        + " WHERE B.idBitacora = LB.idBitacora"
+                                                                        + " AND S.idSensor = LB.idSensor"
+                                                                        + " AND M.idModulo = LB.idModulo"
+                                                                        + " AND U.idUnidad = S.idUnidad"
+                                                                        + " AND EP.idEtapaxProceso = B.idEtapaxProceso"
+                                                                        + " AND PM.idProcesoxModelo = EP.idProcesoxModelo"
+                                                                        + " AND MO.idModelo = PM.idModelo"
+                                                                        + " AND MO.idModelo = "+idModelo
+                                                                        + " AND B.bandera = 0");
                     dtLecturas.Load(consulta);
                     connection.Close();
 
@@ -82,7 +85,7 @@ namespace Exzolt.Datos
             return dtLecturas;
         }
 
-        public DataTable Bitacora(int idBitacora)
+        public DataTable Bitacora(int idModelo)
         {
             DataTable dtBitacora = new DataTable();
             SqlConnection connection = null;
@@ -92,18 +95,21 @@ namespace Exzolt.Datos
                 using (connection = Conexion.ObtieneConexion("ConexionBD"))
                 {
                     connection.Open();
-                    consulta = Ejecuta.ConsultaConRetorno(connection, "SELECT distinct PM.descripcion Proceso, B.fechaInicio, B.fechaFin"
-                                            + " FROM ModelosTrazabilidad.LecturasxBitacora LB,"
-                                            + " ModelosTrazabilidad.Bitacora B, ModelosTrazabilidad.Sensores S,"
-                                            + " ModelosTrazabilidad.Modulos M, ModelosTrazabilidad.Unidades U,"
-                                            + " ModelosTrazabilidad.EtapasxProceso EP, ModelosTrazabilidad.ProcesosxModelo PM"
-                                            + " WHERE B.idBitacora = LB.idBitacora"
-                                            + " AND S.idSensor = LB.idSensor"
-                                            + " AND M.idModulo = LB.idModulo"
-                                            + " AND U.idUnidad = S.idUnidad"
-                                            + " AND EP.idEtapaxProceso = B.idEtapaxProceso"
-                                            + " AND PM.idProcesoxModelo = EP.idProcesoxModelo"
-                                            + " AND B.idBitacora = "+ idBitacora);
+                    consulta = Ejecuta.ConsultaConRetorno(connection, "SELECT distinct pm.descripcion Proceso, EP.descripcion Etapas,B.fechaInicio, B.fechaFin" 
+                                                                        + " FROM ModelosTrazabilidad.LecturasxBitacora LB,"
+                                                                        + " ModelosTrazabilidad.Bitacora B, ModelosTrazabilidad.Sensores S,"
+                                                                        + " ModelosTrazabilidad.Modulos M, ModelosTrazabilidad.Unidades U,"
+                                                                        + " ModelosTrazabilidad.Modelos MO,"
+                                                                        + " ModelosTrazabilidad.EtapasxProceso EP, ModelosTrazabilidad.ProcesosxModelo PM"
+                                                                        + " WHERE B.idBitacora = LB.idBitacora"
+                                                                        + " AND S.idSensor = LB.idSensor"
+                                                                        + " AND M.idModulo = LB.idModulo"
+                                                                        + " AND U.idUnidad = S.idUnidad"
+                                                                        + " AND EP.idEtapaxProceso = B.idEtapaxProceso"
+                                                                        + " AND PM.idProcesoxModelo = EP.idProcesoxModelo"
+                                                                        + " AND MO.idModelo = PM.idModelo"
+                                                                        + " AND MO.idModelo = "+idModelo 
+                                                                        + " AND B.bandera = 0;");
                     dtBitacora.Load(consulta);
                     connection.Close();
 
