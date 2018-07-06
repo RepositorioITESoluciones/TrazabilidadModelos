@@ -1,0 +1,29 @@
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Framework\bin\Debug\Exzolt.Framework.dll
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Framework\bin\Debug\Exzolt.Framework.pdb
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Framework\obj\Debug\Exzolt.Framework.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Framework\obj\Debug\Exzolt.Framework.dll
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Framework\obj\Debug\Exzolt.Framework.pdb
+C:\Users\Mario\Documents\GitHub\Exzolt\Exzolt.Framework\bin\Debug\Exzolt.Framework.dll
+C:\Users\Mario\Documents\GitHub\Exzolt\Exzolt.Framework\bin\Debug\Exzolt.Framework.pdb
+C:\Users\Mario\Documents\GitHub\Exzolt\Exzolt.Framework\obj\Debug\Exzolt.Framework.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Documents\GitHub\Exzolt\Exzolt.Framework\obj\Debug\Exzolt.Framework.dll
+C:\Users\Mario\Documents\GitHub\Exzolt\Exzolt.Framework\obj\Debug\Exzolt.Framework.pdb
+C:\Users\Mario\documents\visual studio 2015\Projects\WSModelosTrazabilidad\Exzolt.Framework\bin\Debug\Exzolt.Framework.dll
+C:\Users\Mario\documents\visual studio 2015\Projects\WSModelosTrazabilidad\Exzolt.Framework\bin\Debug\Exzolt.Framework.pdb
+C:\Users\Mario\documents\visual studio 2015\Projects\WSModelosTrazabilidad\Exzolt.Framework\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mario\documents\visual studio 2015\Projects\WSModelosTrazabilidad\Exzolt.Framework\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mario\documents\visual studio 2015\Projects\WSModelosTrazabilidad\Exzolt.Framework\obj\Debug\Exzolt.Framework.dll
+C:\Users\Mario\documents\visual studio 2015\Projects\WSModelosTrazabilidad\Exzolt.Framework\obj\Debug\Exzolt.Framework.pdb
+C:\Users\Mario\Documents\GitHub\TrazabilidadModelos\WSModelosTrazabilidad\Exzolt.Framework\bin\Debug\Exzolt.Framework.dll
+C:\Users\Mario\Documents\GitHub\TrazabilidadModelos\WSModelosTrazabilidad\Exzolt.Framework\bin\Debug\Exzolt.Framework.pdb
+C:\Users\Mario\Documents\GitHub\TrazabilidadModelos\WSModelosTrazabilidad\Exzolt.Framework\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mario\Documents\GitHub\TrazabilidadModelos\WSModelosTrazabilidad\Exzolt.Framework\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mario\Documents\GitHub\TrazabilidadModelos\WSModelosTrazabilidad\Exzolt.Framework\obj\Debug\Exzolt.Framework.dll
+C:\Users\Mario\Documents\GitHub\TrazabilidadModelos\WSModelosTrazabilidad\Exzolt.Framework\obj\Debug\Exzolt.Framework.pdb
+C:\Users\Mario\Desktop\ProyectosIte\WSExzolt\Exzolt.Framework\bin\Debug\Exzolt.Framework.dll
+C:\Users\Mario\Desktop\ProyectosIte\WSExzolt\Exzolt.Framework\bin\Debug\Exzolt.Framework.pdb
+C:\Users\Mario\Desktop\ProyectosIte\WSExzolt\Exzolt.Framework\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mario\Desktop\ProyectosIte\WSExzolt\Exzolt.Framework\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mario\Desktop\ProyectosIte\WSExzolt\Exzolt.Framework\obj\Debug\Exzolt.Framework.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Desktop\ProyectosIte\WSExzolt\Exzolt.Framework\obj\Debug\Exzolt.Framework.dll
+C:\Users\Mario\Desktop\ProyectosIte\WSExzolt\Exzolt.Framework\obj\Debug\Exzolt.Framework.pdb
