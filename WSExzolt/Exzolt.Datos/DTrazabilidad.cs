@@ -67,7 +67,7 @@ namespace Exzolt.Datos
 
                     }
                         connection.Open();
-                        consulta = Ejecuta.ConsultaConRetorno(connection, "INSERT INTO ModelosTrazabilidad.Bitacora OUTPUT Inserted.idBitacora VALUES(" + idEtaxPro + ",'" + DateTime.Now.ToString("dd/mm/yyyy HH:mm:ss") + "',NULL,0);");
+                        consulta = Ejecuta.ConsultaConRetorno(connection, "INSERT INTO ModelosTrazabilidad.Bitacora OUTPUT Inserted.idBitacora VALUES(" + idEtaxPro + ",'" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "',NULL,0);");
                         dt.Load(consulta);
                         connection.Close();
 
@@ -162,6 +162,26 @@ namespace Exzolt.Datos
             
         }
 
+        public bool UpdateBitacora(int idBitacora)
+        {
+            SqlConnection connection = null;
+            SqlDataReader consulta;
+            try
+            {
+                using (connection = Conexion.ObtieneConexion("ConexionBD"))
+                {
+                        connection.Open();
+                        consulta = Ejecuta.ConsultaConRetorno(connection, "UPDATE ModelosTrazabilidad.Bitacora SET fechaFin = '" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "' WHERE idBitacora= " + idBitacora);
+                        connection.Close();
+                }
+                return true;
 
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+        }
     }
 }

@@ -18,14 +18,17 @@ namespace Exzolt.Negocio
         {
             DataSet Registros = new DataSet();
             Registros=convertJson.ConvertJsonStringToDataSet(lecturas);
-
-            metodoDatos.insertaLecturas(Registros);
-            return true;
+            return metodoDatos.insertaLecturas(Registros); ;
         }
 
         public int insertaBitacora(int idEtaxPro, int bandera)
         {
             return metodoDatos.insertaBitacora(idEtaxPro, bandera);
+        }
+
+        public bool UpdateBitacora(int idBitacora)
+        {
+            return metodoDatos.UpdateBitacora(idBitacora);
         }
 
 

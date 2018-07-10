@@ -21,7 +21,7 @@ function Lecturas() {
         success: function (response) {
             $.each(response.d, function (index, item) {
 
-                if (item.DesModulo == "Contenedor 1" && conModulo==0) {
+                if (item.DesModulo == "Contenedor 1" && conModulo == 0) {
                     conModulo++;
                     htmltabla += '<tr class="">';
                     htmltabla += '<td style="font-weight: bold; font-size:18;">CONTENEDOR 1</td>';
@@ -47,7 +47,7 @@ function Lecturas() {
                     htmltabla += '<td>' + item.acronimo + '</td>';
                     htmltabla += '</tr>';
                 }
-                
+
                 if (item.DesModulo == "Contenedor verde") {
                     htmltabla += '<tr class="success">';
                     //htmltabla += '<td>' + item.DesModulo + '</td>';
@@ -56,7 +56,7 @@ function Lecturas() {
                     htmltabla += '<td>' + item.acronimo + '</td>';
                     htmltabla += '</tr>';
                 }
-                
+
             });
             $("#tbodyLecturas").html(htmltabla);
         },
@@ -77,9 +77,9 @@ function Bitacora() {
         success: function (response) {
             $.each(response.d, function (index, item) {
 
-               
 
-                
+
+
 
                 //htmltabla += '<tr class="success">';
                 //htmltabla += '<td>' + item.DesEtapa + '</td>';
@@ -107,7 +107,7 @@ function Bitacora() {
                     htmltabla += '</tr>';
                 }
 
-                
+
 
             });
             $("#tbodyBitacora").html(htmltabla);
@@ -117,12 +117,11 @@ function Bitacora() {
 }
 
 function estatus() {
-    console.log();
     conprueba++;
 
-    if (conprueba >=1) {
+    if (conprueba >= 1) {
         $("#etapa2").addClass("hidden")
-        $("#etapa1").removeClass("hidden")       
+        $("#etapa1").removeClass("hidden")
     }
     if (conprueba >= 10) {
         $("#etapa1").addClass("hidden")
@@ -133,7 +132,7 @@ function estatus() {
         $("#etapa1").addClass("hidden")
         conprueba = 0;
     }
-    
+
 
     //$("#etapa2").removeClass("hidden")
 
