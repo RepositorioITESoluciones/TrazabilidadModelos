@@ -34,9 +34,9 @@ public class WSExzolt : System.Web.Services.WebService
         return metodos.insertaLectura(lectura);
     }
     [WebMethod]
-    public int PostBitacora(int idEtaxPro, int bandera)
+    public int PostBitacora(int idEtaxPro, int bandera, int idModelo)
     {
-        return metodos.insertaBitacora(idEtaxPro, bandera);
+        return metodos.insertaBitacora(idEtaxPro, bandera, idModelo);
     }
     #endregion
     #region Update

@@ -47,24 +47,27 @@ namespace Exzolt.Datos
             }
         }
 
-        public int insertaBitacora(int idEtaxPro, int bandera)
+        public int insertaBitacora(int idEtaxPro, int bandera,int idModelo)
         {
             SqlConnection connection = null;
             SqlDataReader consulta;
             DataTable dt = new DataTable();
-            int idBitacora = 0;
             int resultado = 0;
             try
             {
                 using (connection = Conexion.ObtieneConexion("ConexionBD"))
                 {
 
-                    if (idEtaxPro==1 && bandera == 1) {
-
+                    if (idEtaxPro==9 || idEtaxPro == 8 && bandera == 1) {
                         connection.Open();
-                        consulta = Ejecuta.ConsultaConRetorno(connection, "UPDATE ModelosTrazabilidad.Bitacora SET bandera = 1");
-                        connection.Close();                       
-
+                        consulta = Ejecuta.ConsultaConRetorno(connection, "UPDATE ModelosTrazabilidad.Bitacora SET bandera = 1"
+                                                        + " WHERE bandera in (SELECT bandera FROM ModelosTrazabilidad.Bitacora B, ModelosTrazabilidad.EtapasxProceso EP,"
+                                                        + " ModelosTrazabilidad.ProcesosxModelo PM, ModelosTrazabilidad.Modelos M"
+                                                        + " WHERE B.idEtapaxProceso = EP.idEtapaxProceso"
+                                                        + " AND PM.idProcesoxModelo = EP.idProcesoxModelo"
+                                                        + " AND PM.idProceso = M.idModelo"
+                                                        + " AND PM.idModelo = M.idModelo AND M.idModelo = " + idModelo+ ")");
+                        connection.Close();
                     }
                         connection.Open();
                         consulta = Ejecuta.ConsultaConRetorno(connection, "INSERT INTO ModelosTrazabilidad.Bitacora OUTPUT Inserted.idBitacora VALUES(" + idEtaxPro + ",'" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "',NULL,0);");
@@ -72,7 +75,6 @@ namespace Exzolt.Datos
                         connection.Close();
 
                     foreach (DataRow row in dt.Rows) { resultado = Convert.ToInt32(row["idBitacora"].ToString()); }
-
                 }
                 return resultado;
 

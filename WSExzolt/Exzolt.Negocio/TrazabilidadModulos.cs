@@ -21,9 +21,9 @@ namespace Exzolt.Negocio
             return metodoDatos.insertaLecturas(Registros); ;
         }
 
-        public int insertaBitacora(int idEtaxPro, int bandera)
+        public int insertaBitacora(int idEtaxPro, int bandera, int idModelo)
         {
-            return metodoDatos.insertaBitacora(idEtaxPro, bandera);
+            return metodoDatos.insertaBitacora(idEtaxPro, bandera, idModelo);
         }
 
         public bool UpdateBitacora(int idBitacora)
